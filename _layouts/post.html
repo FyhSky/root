@@ -9,21 +9,14 @@
           <div class="article">
             <div class="well">
                 <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }} - {{ page.title }}</a></h1>
-            {% if site.comments == true and page.comments == true and site.disqus != '' %}
-                <p class="author"><a href="#disqus_thread">！！！！Comments</a></p>
-            {% endif %}
-            {% if site.duoshuo_short_name != '' and site.duoshuo_comments == true %}
-                <h1>测试</h1>
-                <div id="comments" aria-live="polite">{% include duoshuo.html %}</div>
-            {% endif %}
             <div class="post-content">
             {{ content }}
             </div>
-            {% if page.comments %}
-            <div id="disqus_thread">
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
+            {% if site.duoshuo_short_name != '' and site.duoshuo_comments == true %}
+            <section>
+                <h1>Comments</h1>
+                <div id="comments" aria-live="polite">{% include duoshuo.html %}</div>
+            </section>
             {% endif %}
             </div>
           </div>

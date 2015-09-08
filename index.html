@@ -6,18 +6,9 @@ layout: default
 <div class="article">
     <div class="well">
         <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
-        {% if site.comments == true and post.comments == true and site.disqus != '' %}
-          <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread">双方都双方都是Comments</a></p>
-        {% endif %}
         <div class="content">
             {{ post.content }}
         </div>
-        {% if site.duoshuo_short_name != '' and site.duoshuo_comments == true %}
-        <section>
-            <h1>测试</h1>
-            <div id="comments" aria-live="polite">{% include duoshuo.html %}</div>
-        </section>
-        {% endif %}
     </div>
 </div>
 {% endfor %}
