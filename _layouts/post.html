@@ -12,7 +12,7 @@
             <div class="post-content">
             {{ content }}
             </div>
-            {% if site.duoshuo_short_name != '' and site.duoshuo_comments == true %}
+            {% if site.duoshuo_short_name != '' and site.duoshuo_comments == true and page.comments == true %}
             <section>
                 <h1>Comments</h1>
                 <div id="comments" aria-live="polite">{% include duoshuo.html %}</div>
